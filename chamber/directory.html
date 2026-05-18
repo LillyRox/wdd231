@@ -8,13 +8,12 @@
 
   <title>Member Directory | Mexico City Chamber of Commerce</title>
 
-  <!-- Fix 1: favicon as external file, not data URI with spaces -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="Member Directory | Mexico City Chamber of Commerce">
   <meta property="og:description" content="Browse the Mexico City Chamber of Commerce member directory. Find local businesses and services that support our community.">
-  <meta property="og:image"       content="https://lillyrox.github.io/wdd231/chamber/images">
+  <meta property="og:image"       content="https://lillyrox.github.io/wdd231/chamber/images/og-image.jpg">
   <meta property="og:url"         content="https://lillyrox.github.io/wdd231/chamber/directory.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +28,7 @@
     <div class="header-inner">
       <div class="logo-svg" aria-hidden="true">M</div>
       <div class="header-text">
-        <h1>Mexico City Chamber of Commerce</h1>
+        <p class="site-name">Mexico City Chamber of Commerce</p>
         <p>Strengthening Our Business Community</p>
       </div>
     </div>
@@ -37,7 +36,6 @@
 
   <nav id="main-nav" aria-label="Main navigation">
     <button id="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-      <!-- Fix 2: span instead of div inside button -->
       <span class="hamburger" aria-hidden="true">
         <span></span>
         <span></span>
@@ -45,7 +43,6 @@
       </span>
       Menu
     </button>
-    <!-- Fix 3: removed redundant role="list" from ul -->
     <ul id="primary-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="directory.html" aria-current="page">Directory</a></li>
@@ -60,6 +57,9 @@
   </div>
 
   <main id="main-content">
+
+    <h1>Member Directory</h1>
+
     <div class="directory-controls">
       <p class="member-count" aria-live="polite">
         <span id="member-count">Loading…</span>
@@ -85,7 +85,6 @@
     </div>
 
     <section id="members-container" class="grid-view" aria-label="Chamber members">
-      <!-- Content injected by directory.js -->
     </section>
   </main>
 
@@ -100,17 +99,17 @@
         <p>Av. Insurgentes Sur 200</p>
         <p>Mexico City, CDMX</p>
         <p>(55) 5800-1200</p>
-        <p><a href="mailto:info@camaracdmx.com" style="color:var(--clr-secondary)">info@camaracdmx.com</a></p>
+        <!-- Fix 3: inline style removed, class added -->
+        <p><a href="mailto:info@camaracdmx.com" class="footer-email">info@camaracdmx.com</a></p>
       </div>
       <div class="footer-social">
         <h4>Connect</h4>
-        <p><a href="#" style="color:rgba(255,255,255,0.7)">Facebook</a></p>
-        <p><a href="#" style="color:rgba(255,255,255,0.7)">LinkedIn</a></p>
-        <p><a href="#" style="color:rgba(255,255,255,0.7)">Twitter / X</a></p>
+        <p><a href="#" class="footer-social-link">Facebook</a></p>
+        <p><a href="#" class="footer-social-link">LinkedIn</a></p>
+        <p><a href="#" class="footer-social-link">Twitter / X</a></p>
       </div>
     </div>
-
-    <hr class="footer-divider" style="margin:1.5rem 0 1rem">
+    <hr class="footer-divider">
 
     <div class="footer-inner">
       <div class="footer-bottom">
@@ -120,7 +119,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="scripts/directory.js"></script>
+  <script src="scripts/directory.js" defer></script>
 </body>
 </html>
