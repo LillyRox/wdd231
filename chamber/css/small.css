@@ -1,9 +1,3 @@
-/* =========================================
-   Mexico City Chamber of Commerce
-   small.css — Mobile-first base styles
-   ========================================= */
-
-/* --- Design Tokens --- */
 :root {
   --clr-primary:    #8B0066;   /* bugambilia CDMX   */
   --clr-secondary:  #F5C800;   /* golden yellow     */

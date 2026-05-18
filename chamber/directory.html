@@ -8,27 +8,19 @@
 
   <title>Member Directory | Mexico City Chamber of Commerce</title>
 
-  <!-- Favicon (inline SVG as data URI) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231a3a2e'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-family='Georgia' fill='%23c8962e'%3EM%3C/text%3E%3C/svg%3E">
 
-  <!-- Open Graph / Facebook Meta -->
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="Member Directory | Mexico City Chamber of Commerce">
   <meta property="og:description" content="Browse the Mexico City Chamber of Commerce member directory. Find local businesses and services that support our community.">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS: normalize → small → larger -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/small.css">
   <link rel="stylesheet" href="css/larger.css">
 </head>
 <body>
-
-  <!-- ══════════════════ HEADER ══════════════════ -->
   <header id="site-header">
     <div class="header-inner">
       <!-- SVG/text logo (replace with real logo image when available) -->
@@ -39,8 +31,6 @@
       </div>
     </div>
   </header>
-
-  <!-- ══════════════════ NAVIGATION ══════════════════ -->
   <nav id="main-nav" aria-label="Main navigation">
     <button id="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
       <div class="hamburger" aria-hidden="true">
@@ -57,17 +47,11 @@
       <li><a href="join.html">Join</a></li>
     </ul>
   </nav>
-
-  <!-- ══════════════════ HERO ══════════════════ -->
   <div class="page-hero">
     <h2>Business Directory</h2>
     <p>Explore our community of local businesses and organizations committed to Mexico City's growth.</p>
   </div>
-
-  <!-- ══════════════════ MAIN CONTENT ══════════════════ -->
   <main id="main-content">
-
-    <!-- Directory controls: count + view toggle -->
     <div class="directory-controls">
       <p class="member-count" aria-live="polite">
         <span id="member-count">Loading…</span>
@@ -75,14 +59,12 @@
 
       <div class="view-toggle" role="group" aria-label="Directory view options">
         <button class="view-btn active" id="btn-grid" title="Grid view" aria-label="Grid view" aria-pressed="true">
-          <!-- Grid icon -->
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
             <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
           </svg>
         </button>
         <button class="view-btn" id="btn-list" title="List view" aria-label="List view" aria-pressed="false">
-          <!-- List icon -->
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <line x1="8" y1="6"  x2="21" y2="6"/>
             <line x1="8" y1="12" x2="21" y2="12"/>
@@ -94,15 +76,11 @@
         </button>
       </div>
     </div>
-
-    <!-- Members rendered by JS -->
     <section id="members-container" class="grid-view" aria-label="Chamber members">
       <!-- Content injected by directory.js -->
     </section>
 
   </main>
-
-  <!-- ══════════════════ FOOTER ══════════════════ -->
   <footer id="site-footer">
     <div class="footer-inner">
 

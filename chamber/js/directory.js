@@ -1,9 +1,3 @@
-/**
- * Maplewood Chamber of Commerce
- * directory.js — Member directory logic
- */
-
-// ── DOM References ──────────────────────────────────────────────────────────
 const membersContainer = document.getElementById('members-container');
 const memberCount      = document.getElementById('member-count');
 const btnGrid          = document.getElementById('btn-grid');
@@ -12,12 +6,8 @@ const navToggle        = document.getElementById('nav-toggle');
 const primaryNav       = document.getElementById('primary-nav');
 const copyrightYear    = document.getElementById('copyright-year');
 const lastModified     = document.getElementById('last-modified');
-
-// ── Footer: dynamic dates ───────────────────────────────────────────────────
 if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
 if (lastModified)  lastModified.textContent  = document.lastModified;
-
-// ── Hamburger / Nav toggle ──────────────────────────────────────────────────
 if (navToggle && primaryNav) {
   navToggle.addEventListener('click', () => {
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -25,8 +15,6 @@ if (navToggle && primaryNav) {
     primaryNav.classList.toggle('open', !expanded);
   });
 }
-
-// ── Membership level helpers ────────────────────────────────────────────────
 const LEVEL = {
   1: { label: 'Member',    cls: 'badge-member', icon: '●' },
   2: { label: 'Silver',    cls: 'badge-silver', icon: '★' },
@@ -39,25 +27,14 @@ function levelBadge(level) {
     ${info.icon} ${info.label}
   </span>`;
 }
-
-// Business emoji fallbacks for placeholder images
-const EMOJI_ICONS = ['🏪','🏦','🌿','🏠','💻','🏨','🥐','🚗'];
-function placeholderIcon(index) {
-  return EMOJI_ICONS[index % EMOJI_ICONS.length];
-}
-
-// ── Build HTML fragments ────────────────────────────────────────────────────
 function buildCard(member, index) {
   const imgMarkup = member.image
-    ? `<img src="images/${member.image}" alt="${member.name} logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+    ? `<img src="images/${member.image}" alt="${member.name} logo" loading="lazy">`
     : '';
   return `
     <article class="member-card">
       <div class="card-img-wrap">
         ${imgMarkup}
-        <span class="card-img-placeholder" style="${member.image ? 'display:none' : ''}" aria-hidden="true">
-          ${placeholderIcon(index)}
-        </span>
       </div>
       <div class="card-body">
         <div class="card-header">
@@ -85,8 +62,8 @@ function buildCard(member, index) {
 
 function buildListItem(member, index) {
   const imgMarkup = member.image
-    ? `<img src="images/${member.image}" alt="" loading="lazy" onerror="this.style.display='none'">`
-    : placeholderIcon(index);
+    ? `<img src="images/${member.image}" alt="" loading="lazy">`
+    : '';
   return `
     <div class="member-list-item">
       <div class="list-logo" aria-hidden="true">${imgMarkup}</div>
@@ -101,8 +78,6 @@ function buildListItem(member, index) {
       <div class="list-badge">${levelBadge(member.membershipLevel)}</div>
     </div>`;
 }
-
-// ── Render members ──────────────────────────────────────────────────────────
 let currentMembers = [];
 let currentView    = localStorage.getItem('chamberView') || 'grid';
 
@@ -116,13 +91,9 @@ function renderMembers() {
     : currentMembers.map((m, i) => buildListItem(m, i)).join('');
 
   membersContainer.innerHTML = html;
-
-  // Update active button state
   btnGrid?.classList.toggle('active', currentView === 'grid');
   btnList?.classList.toggle('active', currentView === 'list');
 }
-
-// ── View toggle buttons ─────────────────────────────────────────────────────
 btnGrid?.addEventListener('click', () => {
   currentView = 'grid';
   localStorage.setItem('chamberView', 'grid');
@@ -134,8 +105,6 @@ btnList?.addEventListener('click', () => {
   localStorage.setItem('chamberView', 'list');
   renderMembers();
 });
-
-// ── Fetch & display members ─────────────────────────────────────────────────
 async function loadMembers() {
   // Show loading state
   membersContainer.innerHTML = `
@@ -152,11 +121,7 @@ async function loadMembers() {
     currentMembers = data.members || [];
 
     if (currentMembers.length === 0) throw new Error('No member data found.');
-
-    // Update count label
     if (memberCount) memberCount.textContent = `${currentMembers.length} members`;
-
-    // Restore last view preference
     currentView = localStorage.getItem('chamberView') || 'grid';
     renderMembers();
 
@@ -169,6 +134,4 @@ async function loadMembers() {
       </div>`;
   }
 }
-
-// ── Initialise ──────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', loadMembers);
