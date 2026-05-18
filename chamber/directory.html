@@ -8,7 +8,8 @@
 
   <title>Member Directory | Mexico City Chamber of Commerce</title>
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231a3a2e'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-family='Georgia' fill='%23c8962e'%3EM%3C/text%3E%3C/svg%3E">
+  <!-- Fix 1: favicon as external file, not data URI with spaces -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="Member Directory | Mexico City Chamber of Commerce">
@@ -26,7 +27,6 @@
 <body>
   <header id="site-header">
     <div class="header-inner">
-      <!-- SVG/text logo (replace with real logo image when available) -->
       <div class="logo-svg" aria-hidden="true">M</div>
       <div class="header-text">
         <h1>Mexico City Chamber of Commerce</h1>
@@ -34,32 +34,36 @@
       </div>
     </div>
   </header>
+
   <nav id="main-nav" aria-label="Main navigation">
     <button id="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-      <div class="hamburger" aria-hidden="true">
+      <!-- Fix 2: span instead of div inside button -->
+      <span class="hamburger" aria-hidden="true">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </span>
       Menu
     </button>
-    <ul id="primary-nav" role="list">
+    <!-- Fix 3: removed redundant role="list" from ul -->
+    <ul id="primary-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="directory.html" aria-current="page">Directory</a></li>
       <li><a href="discover.html">Discover</a></li>
       <li><a href="join.html">Join</a></li>
     </ul>
   </nav>
+
   <div class="page-hero">
     <h2>Business Directory</h2>
     <p>Explore our community of local businesses and organizations committed to Mexico City's growth.</p>
   </div>
+
   <main id="main-content">
     <div class="directory-controls">
       <p class="member-count" aria-live="polite">
         <span id="member-count">Loading…</span>
       </p>
-
       <div class="view-toggle" role="group" aria-label="Directory view options">
         <button class="view-btn active" id="btn-grid" title="Grid view" aria-label="Grid view" aria-pressed="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -79,19 +83,18 @@
         </button>
       </div>
     </div>
+
     <section id="members-container" class="grid-view" aria-label="Chamber members">
       <!-- Content injected by directory.js -->
     </section>
-
   </main>
+
   <footer id="site-footer">
     <div class="footer-inner">
-
       <div class="footer-brand">
         <h3>Mexico City Chamber of Commerce</h3>
         <p>Serving the business community since 2016.</p>
       </div>
-
       <div class="footer-contact">
         <h4>Contact Us</h4>
         <p>Av. Insurgentes Sur 200</p>
@@ -99,14 +102,12 @@
         <p>(55) 5800-1200</p>
         <p><a href="mailto:info@camaracdmx.com" style="color:var(--clr-secondary)">info@camaracdmx.com</a></p>
       </div>
-
       <div class="footer-social">
         <h4>Connect</h4>
         <p><a href="#" style="color:rgba(255,255,255,0.7)">Facebook</a></p>
         <p><a href="#" style="color:rgba(255,255,255,0.7)">LinkedIn</a></p>
         <p><a href="#" style="color:rgba(255,255,255,0.7)">Twitter / X</a></p>
       </div>
-
     </div>
 
     <hr class="footer-divider" style="margin:1.5rem 0 1rem">
