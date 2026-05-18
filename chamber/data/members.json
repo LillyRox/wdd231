@@ -1,0 +1,84 @@
+{
+  "members": [
+    {
+      "name": "Café El Jarocho",
+      "address": "Av. Álvaro Obregón 112, Roma Norte, CDMX",
+      "phone": "(55) 5264-1832",
+      "website": "https://cafeeljarocho.example.com",
+      "image": "jarocho.jpg",
+      "membershipLevel": 3,
+      "description": "Artisan café and bakery with over 25 years serving the Roma neighborhood.",
+      "founded": 1998
+    },
+    {
+      "name": "CDMX Auto Repair",
+      "address": "Calz. de Tlalpan 780, Portales, CDMX",
+      "phone": "(55) 5319-4400",
+      "website": "https://cdmxauto.example.com",
+      "image": "repair.jpg",
+      "membershipLevel": 2,
+      "description": "Full-service auto repair shop with certified technicians. Maintenance and repairs for all makes.",
+      "founded": 2005
+    },
+    {
+      "name": "Jardines del Pedregal",
+      "address": "Periférico Sur 55, Pedregal, CDMX",
+      "phone": "(55) 5477-9021",
+      "website": "https://jardinesdelpedregal.example.com",
+      "image": "jardines.jpg",
+      "membershipLevel": 2,
+      "description": "Design, installation and maintenance of residential and corporate gardens across the city.",
+      "founded": 2010
+    },
+    {
+      "name": "Grupo Inmobiliario Reforma",
+      "address": "Paseo de la Reforma 300, Cuauhtémoc, CDMX",
+      "phone": "(55) 5831-7760",
+      "website": "https://gruporeforma.example.com",
+      "image": "reforma.jpg",
+      "membershipLevel": 3,
+      "description": "Real estate firm specializing in residential and commercial properties throughout Mexico City.",
+      "founded": 1995
+    },
+    {
+      "name": "TechBridge Solutions",
+      "address": "Insurgentes Sur 910, Del Valle, CDMX",
+      "phone": "(55) 5662-3355",
+      "website": "https://techbridgesolutions.example.com",
+      "image": "tech.png",
+      "membershipLevel": 3,
+      "description": "IT consulting, managed services and cybersecurity solutions for local businesses.",
+      "founded": 2012
+    },
+    {
+      "name": "CDMX Community Credit Union",
+      "address": "Av. Insurgentes Norte 1, Tlatelolco, CDMX",
+      "phone": "(55) 5100-5500",
+      "website": "https://cdmxccu.example.com",
+      "image": "union.jpg",
+      "membershipLevel": 3,
+      "description": "Member-owned credit union offering competitive rates on loans, savings and checking accounts.",
+      "founded": 1967
+    },
+    {
+      "name": "Condesa Wellness Center",
+      "address": "Tamaulipas 23, Condesa, CDMX",
+      "phone": "(55) 5788-2244",
+      "website": "https://wellnesscondesa.example.com",
+      "image": "well.jpg",
+      "membershipLevel": 1,
+      "description": "Yoga, therapeutic massage and holistic wellness programs for individuals and families.",
+      "founded": 2018
+    },
+    {
+      "name": "Hotel & Event Center Chapultepec",
+      "address": "Av. Chapultepec 500, Juárez, CDMX",
+      "phone": "(55) 5950-7700",
+      "website": "https://hotelchapultepec.example.com",
+      "image": "cha.jpg",
+      "membershipLevel": 3,
+      "description": "Boutique hotel and event venue with 180 guest rooms and conference facilities.",
+      "founded": 2001
+    }
+  ]
+}

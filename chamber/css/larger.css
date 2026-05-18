@@ -1,0 +1,117 @@
+/* =========================================
+   Maplewood Chamber of Commerce
+   larger.css — Tablet & Desktop overrides
+   ========================================= */
+
+/* --- Tablet: 640px+ --- */
+@media (min-width: 640px) {
+
+  /* Header */
+  .header-text h1 { font-size: 1.5rem; }
+  .header-text p  { font-size: 0.85rem; }
+
+  /* Nav: hide toggle, show horizontal bar */
+  #nav-toggle { display: none; }
+
+  #primary-nav {
+    display: flex !important;
+    flex-direction: row;
+    background: transparent;
+  }
+
+  #primary-nav li a {
+    border-bottom: none;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    padding: 0.9rem 1.1rem;
+    font-size: 0.88rem;
+  }
+
+  #primary-nav li:last-child a { border-right: none; }
+
+  /* Hero */
+  .page-hero { padding: 3rem 2rem; }
+  .page-hero h2 { font-size: 2.6rem; }
+
+  /* Main */
+  main { padding: 2rem 1.5rem; }
+
+  /* Grid: 2 columns */
+  #members-container.grid-view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* List: show more columns */
+  .member-list-item {
+    padding: 0.9rem 1.5rem;
+  }
+
+  .list-details { flex-wrap: nowrap; }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer-brand { flex: 1 1 220px; }
+  .footer-contact { flex: 1 1 180px; }
+  .footer-social { flex: 1 1 150px; }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .footer-bottom span { display: inline; }
+}
+
+/* --- Desktop: 900px+ --- */
+@media (min-width: 900px) {
+
+  /* Header */
+  #site-header { padding: 1rem 2rem; }
+  .header-logo, .logo-svg { width: 64px; height: 64px; }
+  .header-text h1 { font-size: 1.8rem; }
+
+  /* Nav */
+  #main-nav { padding: 0 2rem; }
+  #primary-nav li a { padding: 1rem 1.3rem; font-size: 0.92rem; }
+
+  /* Hero */
+  .page-hero { padding: 4rem 2rem; }
+  .page-hero h2 { font-size: 3rem; }
+  .page-hero p  { font-size: 1.05rem; }
+
+  /* Main */
+  main { padding: 2.5rem 2rem; }
+
+  /* Grid: 3 columns */
+  #members-container.grid-view {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-img-wrap { height: 160px; }
+
+  /* Directory controls */
+  .directory-controls { margin-bottom: 2rem; }
+}
+
+/* --- Wide: 1200px+ --- */
+@media (min-width: 1200px) {
+
+  #members-container.grid-view {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .page-hero { padding: 5rem 2rem; }
+  .page-hero h2 { font-size: 3.5rem; }
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
